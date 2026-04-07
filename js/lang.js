@@ -161,7 +161,7 @@ const LANG = {
   el: {
     /* Nav */
     nav_home:         'Αρχική',
-    nav_projects:     'Έργα',
+    nav_projects:     'Project',
     nav_competitions: 'Διαγωνισμοί',
     nav_news:         'Νέα',
     nav_team:         'Ομάδα',
@@ -175,7 +175,7 @@ const LANG = {
     hero_btn_join:    'Κάνε αίτηση',
     hero_btn_work:    'Δες τα project μας',
     hero_stat_members:      'Μέλη',
-    hero_stat_projects:     'Έργα',
+    hero_stat_projects:     'Project',
     hero_stat_competitions: 'Διαγωνισμοί',
     hero_stat_sponsors:     'Χορηγοί',
 
