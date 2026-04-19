@@ -439,10 +439,6 @@ p  { color: var(--text-muted); line-height: 1.75; }
 .hero-title { margin-bottom: 20px; max-width: 680px; }
 .hero-title .titleText {
   color: #0353de;
-   background-color: #0353de;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 .hero-sub {
   font-size: 17px;
