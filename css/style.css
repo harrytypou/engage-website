@@ -437,8 +437,8 @@ p  { color: var(--text-muted); line-height: 1.75; }
   50% { opacity: 0.4; transform: scale(0.75); }
 }
 .hero-title { margin-bottom: 20px; max-width: 680px; }
-.hero-title .grad {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+.hero-title .titleText {
+  color: #0353de;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
