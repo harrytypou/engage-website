@@ -172,7 +172,7 @@ const LANG = {
     hero_badge:       'Μηχανική · Ρομποτική · Τεχνολογία',
     hero_title:       'Χτίζουμε το <span class="grad">μέλλον</span>,<br>ένα project τη φορά.',
     hero_sub:         'Μια φοιτητική ομάδα μηχανικής στην πρώτη γραμμή της ρομποτικής, των ενσωματωμένων συστημάτων και της εφαρμοσμένης τεχνολογίας.',
-    hero_btn_join:    'Κάνε αίτηση',
+    hero_btn_join:    'Μπες στην ομάδα',
     hero_btn_work:    'Δες τα project μας',
     hero_stat_members:      'Μέλη',
     hero_stat_projects:     'Project',
