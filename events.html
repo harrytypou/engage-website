@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ENGAGE Team | Meet the people behind the club.">
-  <title>Team | ENGAGE</title>
+  <meta name="description" content="ENGAGE Events | Workshops, talks, and meetups hosted by the team.">
+  <title>Events | ENGAGE</title>
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,7 +18,7 @@
         <li><a href="projects.html"     class="nav-link" data-i18n="nav_projects">Projects</a></li>
         <li><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
         <li><a href="news.html"         class="nav-link" data-i18n="nav_news">News</a></li>
-        <li><a href="events.html"        class="nav-link" data-i18n="nav_events">Events</a></li>
+        <li><a href="events.html"       class="nav-link" data-i18n="nav_events">Events</a></li>
         <li><a href="team.html"         class="nav-link" data-i18n="nav_team">Team</a></li>
         <li><a href="sponsors.html"     class="nav-link" data-i18n="nav_sponsors">Sponsors</a></li>
         <li><a href="contact.html"      class="nav-link" data-i18n="nav_contact">Contact</a></li>
@@ -34,13 +34,14 @@
       </div>
     </div>
   </nav>
+
   <div class="mobile-drawer" id="mobile-drawer">
     <ul class="mobile-links">
       <li><a href="index.html"        class="mobile-link" data-i18n="nav_home">Home</a></li>
       <li><a href="projects.html"     class="mobile-link" data-i18n="nav_projects">Projects</a></li>
       <li><a href="competitions.html" class="mobile-link" data-i18n="nav_competitions">Competitions</a></li>
       <li><a href="news.html"         class="mobile-link" data-i18n="nav_news">News</a></li>
-      <li><a href="events.html"        class="mobile-link" data-i18n="nav_events">Events</a></li>
+      <li><a href="events.html"       class="mobile-link" data-i18n="nav_events">Events</a></li>
       <li><a href="team.html"         class="mobile-link" data-i18n="nav_team">Team</a></li>
       <li><a href="sponsors.html"     class="mobile-link" data-i18n="nav_sponsors">Sponsors</a></li>
       <li><a href="contact.html"      class="mobile-link" data-i18n="nav_contact">Contact</a></li>
@@ -50,15 +51,15 @@
 
   <div class="page-hero">
     <div class="container page-hero-content">
-      <div class="sec-label" data-i18n="sec_team_label">People</div>
-      <h1 data-i18n="team_page_title">Meet the team</h1>
-      <p style="margin-top:12px;max-width:520px;" data-i18n="team_page_sub">The people behind ENGAGE — students, engineers, and builders.</p>
+      <div class="sec-label" data-i18n="sec_events_label">What's happening</div>
+      <h1 data-i18n="events_page_title">Events</h1>
+      <p style="margin-top:12px;max-width:520px;" data-i18n="events_page_sub">Workshops, talks, and meetups hosted by ENGAGE.</p>
     </div>
   </div>
 
   <section class="section">
     <div class="container">
-      <div id="team-container"></div>
+      <div id="events-container"></div>
     </div>
   </section>
 
@@ -80,6 +81,7 @@
             <li><a href="projects.html"     class="footer-link" data-i18n="nav_projects">Projects</a></li>
             <li><a href="competitions.html" class="footer-link" data-i18n="nav_competitions">Competitions</a></li>
             <li><a href="news.html"         class="footer-link" data-i18n="nav_news">News</a></li>
+            <li><a href="events.html"       class="footer-link" data-i18n="nav_events">Events</a></li>
             <li><a href="team.html"         class="footer-link" data-i18n="nav_team">Team</a></li>
           </ul>
         </div>
@@ -104,8 +106,8 @@
   <script src="js/content.js"></script>
   <script src="js/nav.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => renderTeamPage('team-container'));
-    function onLangChange() { renderTeamPage('team-container'); }
+    document.addEventListener('DOMContentLoaded', () => renderEventsPage('events-container'));
+    function onLangChange() { renderEventsPage('events-container'); }
   </script>
 </body>
 </html>

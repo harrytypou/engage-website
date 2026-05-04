@@ -12,6 +12,7 @@ const LANG = {
     nav_team:         'Team',
     nav_sponsors:     'Sponsors',
     nav_contact:      'Contact',
+    nav_events:       'Events',
 
     /* Hero */
     hero_badge:       'Engineering · Robotics · Technology',
@@ -40,6 +41,9 @@ const LANG = {
     sec_team_label:   'People',
     sec_team_title:   'Meet the team',
     sec_team_more:    'Full team →',
+    sec_events_label: 'What\'s happening',
+    sec_events_title: 'Upcoming events',
+    sec_events_more:  'All events →',
 
     /* News */
     news_page_title:  'News & announcements',
@@ -53,6 +57,24 @@ const LANG = {
     news_empty:       'No news yet. Check back soon.',
     news_error:       'Could not load news.',
     news_links_title: 'Related links',
+
+    /* Events */
+    events_page_title:   'Events',
+    events_page_sub:     'Workshops, talks, and meetups hosted by ENGAGE.',
+    events_label_workshop:   'Workshop',
+    events_label_talk:       'Talk',
+    events_label_meetup:     'Meetup',
+    events_label_hackathon:  'Hackathon',
+    events_label_other:      'Event',
+    events_status_upcoming:  'Upcoming',
+    events_status_ongoing:   'Ongoing',
+    events_status_past:      'Past',
+    events_register:         'Register →',
+    events_learn_more:       'Learn more →',
+    events_empty:            'No events yet. Check back soon.',
+    events_error:            'Could not load events.',
+    events_free:             'Free',
+    events_location_online:  'Online',
 
     /* Projects */
     proj_page_title:  'Our projects',
@@ -167,6 +189,7 @@ const LANG = {
     nav_team:         'Ομάδα',
     nav_sponsors:     'Χορηγοί',
     nav_contact:      'Επικοινωνία',
+    nav_events:       'Εκδηλώσεις',
 
     /* Hero */
     hero_badge:       'Μηχανική · Ρομποτική · Τεχνολογία',
@@ -195,6 +218,9 @@ const LANG = {
     sec_team_label:   'Μέλη',
     sec_team_title:   'Η ομάδα μας',
     sec_team_more:    'Όλη η ομάδα →',
+    sec_events_label: 'Τι γίνεται',
+    sec_events_title: 'Επερχόμενες εκδηλώσεις',
+    sec_events_more:  'Όλες οι εκδηλώσεις →',
 
     /* News */
     news_page_title:  'Νέα & ανακοινώσεις',
@@ -208,6 +234,24 @@ const LANG = {
     news_empty:       'Δεν υπάρχουν νέα ακόμα.',
     news_error:       'Αδυναμία φόρτωσης νέων.',
     news_links_title: 'Σχετικοί σύνδεσμοι',
+
+    /* Events */
+    events_page_title:   'Εκδηλώσεις',
+    events_page_sub:     'Workshops, ομιλίες και συναντήσεις που διοργανώνει το ENGAGE.',
+    events_label_workshop:   'Workshop',
+    events_label_talk:       'Ομιλία',
+    events_label_meetup:     'Meetup',
+    events_label_hackathon:  'Hackathon',
+    events_label_other:      'Εκδήλωση',
+    events_status_upcoming:  'Επερχόμενη',
+    events_status_ongoing:   'Σε εξέλιξη',
+    events_status_past:      'Παρελθόν',
+    events_register:         'Εγγραφή →',
+    events_learn_more:       'Μάθε περισσότερα →',
+    events_empty:            'Δεν υπάρχουν εκδηλώσεις ακόμα.',
+    events_error:            'Αδυναμία φόρτωσης εκδηλώσεων.',
+    events_free:             'Δωρεάν',
+    events_location_online:  'Διαδικτυακά',
 
     /* Projects */
     proj_page_title:  'Τα project μας',

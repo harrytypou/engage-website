@@ -21,7 +21,8 @@
         <li><a href="projects.html"     class="nav-link" data-i18n="nav_projects">Projects</a></li>
         <li><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
         <li><a href="news.html"         class="nav-link" data-i18n="nav_news">News</a></li>
-        <li><a href="team.html"         class="nav-link" data-i18n="nav_team">Team</a></li>
+        <li><a href="events.html"        class="nav-link" data-i18n="nav_events">Events</a></li>
+        <li><a href="team.html"          class="nav-link" data-i18n="nav_team">Team</a></li>
         <li><a href="sponsors.html"     class="nav-link" data-i18n="nav_sponsors">Sponsors</a></li>
         <li><a href="contact.html"      class="nav-link" data-i18n="nav_contact">Contact</a></li>
       </ul>
@@ -46,7 +47,8 @@
       <li><a href="projects.html"     class="mobile-link" data-i18n="nav_projects">Projects</a></li>
       <li><a href="competitions.html" class="mobile-link" data-i18n="nav_competitions">Competitions</a></li>
       <li><a href="news.html"         class="mobile-link" data-i18n="nav_news">News</a></li>
-      <li><a href="team.html"         class="mobile-link" data-i18n="nav_team">Team</a></li>
+      <li><a href="events.html"        class="mobile-link" data-i18n="nav_events">Events</a></li>
+      <li><a href="team.html"          class="mobile-link" data-i18n="nav_team">Team</a></li>
       <li><a href="sponsors.html"     class="mobile-link" data-i18n="nav_sponsors">Sponsors</a></li>
       <li><a href="contact.html"      class="mobile-link" data-i18n="nav_contact">Contact</a></li>
     </ul>
@@ -112,6 +114,20 @@
         <a href="projects.html" class="sec-link" data-i18n="sec_proj_more">All projects →</a>
       </div>
       <div id="projects-preview"></div>
+    </div>
+  </section>
+
+  <!-- ── EVENTS PREVIEW ───────────────────────────────────── -->
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="sec-header reveal">
+        <div>
+          <div class="sec-label" data-i18n="sec_events_label">What's happening</div>
+          <h2 data-i18n="sec_events_title">Upcoming events</h2>
+        </div>
+        <a href="events.html" class="sec-link" data-i18n="sec_events_more">All events →</a>
+      </div>
+      <div id="events-preview"></div>
     </div>
   </section>
 
@@ -203,6 +219,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       renderNewsPreview('news-preview');
       renderProjectsPreview('projects-preview');
+      renderEventsPreview('events-preview');
       renderCompetitionsPreview('competitions-preview');
       renderSponsorsPreview('sponsors-preview');
       renderTeamPreview('team-preview');
@@ -210,6 +227,7 @@
     function onLangChange() {
       renderNewsPreview('news-preview');
       renderProjectsPreview('projects-preview');
+      renderEventsPreview('events-preview');
       renderCompetitionsPreview('competitions-preview');
       renderTeamPreview('team-preview');
     }

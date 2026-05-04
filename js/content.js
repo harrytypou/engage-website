@@ -282,3 +282,113 @@ function sponsorCardHTML(s) {
     : `<div class="sponsor-card">${inner}</div>`;
   return wrap;
 }
+
+/* ── Events ──────────────────────────────────────────────── */
+async function fetchEvents() {
+  const res = await fetch(`${RAW_BASE}/data/events.json`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+async function renderEventsPreview(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  try {
+    const events = await fetchEvents();
+    /* Show upcoming + ongoing first, sorted by date; fallback to most recent past */
+    const sorted = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const live   = sorted.filter(e => e.status === 'upcoming' || e.status === 'ongoing');
+    const items  = (live.length > 0 ? live : sorted.slice(-3).reverse()).slice(0, 3);
+    if (items.length === 0) {
+      container.innerHTML = `<div class="empty-state"><p class="empty-state-title">${t('events_empty')}</p></div>`;
+      return;
+    }
+    container.innerHTML = `<div class="events-grid">${items.map(eventCardHTML).join('')}</div>`;
+    triggerReveal(container);
+  } catch (e) {
+    container.innerHTML = errorState(t('events_error'), e.message);
+  }
+}
+
+async function renderEventsPage(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = `<div class="events-grid">${skeletonCards(3, 'skeleton-card')}</div>`;
+  try {
+    const events = await fetchEvents();
+    if (events.length === 0) {
+      container.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📅</div><p class="empty-state-title">${t('events_empty')}</p></div>`;
+      return;
+    }
+    const sorted   = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const upcoming = sorted.filter(e => e.status === 'upcoming' || e.status === 'ongoing');
+    const past     = sorted.filter(e => e.status === 'past').reverse();
+    let html = '';
+    if (upcoming.length > 0) {
+      html += `<div style="margin-bottom:52px;">
+        <div class="tier-title">${t('events_status_upcoming')}</div>
+        <div class="events-grid">${upcoming.map(eventCardHTML).join('')}</div>
+      </div>`;
+    }
+    if (past.length > 0) {
+      html += `<div>
+        <div class="tier-title">${t('events_status_past')}</div>
+        <div class="events-grid events-grid-past">${past.map(eventCardHTML).join('')}</div>
+      </div>`;
+    }
+    container.innerHTML = html;
+    triggerReveal(container);
+  } catch (e) {
+    container.innerHTML = errorState(t('events_error'), e.message);
+  }
+}
+
+function eventCardHTML(ev) {
+  const loc  = ev[currentLang] || ev['en'] || {};
+  const name = loc.title || ev.title || '';
+  const desc = loc.description || ev.description || '';
+  const typeKey   = `events_label_${ev.type || 'other'}`;
+  const statusKey = `events_status_${ev.status || 'upcoming'}`;
+  const statusMap = { upcoming: 'badge-blue', ongoing: 'badge-green', past: 'badge-gray' };
+
+  const dateStr = ev.date
+    ? new Date(ev.date).toLocaleDateString(currentLang === 'el' ? 'el-GR' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+    : '';
+
+  const loc_loc  = loc.location || ev.location || '';
+  const locationHTML = loc_loc
+    ? `<div class="event-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>${escapeHTML(loc_loc)}</span></div>`
+    : '';
+
+  const timeStr  = ev.time || '';
+  const timeHTML = timeStr
+    ? `<div class="event-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>${escapeHTML(timeStr)}</span></div>`
+    : '';
+
+  const isPast = ev.status === 'past';
+
+  const imgHTML = ev.image
+    ? `<div class="event-card-img" style="background-image:url('${escapeHTML(ev.image)}')"></div>`
+    : `<div class="event-card-img-placeholder"><span>${ev.icon || '📅'}</span></div>`;
+
+  const inner = `
+      ${imgHTML}
+      <div class="event-card-body">
+        <div class="event-card-header">
+          <span class="badge ${statusMap[ev.status] || 'badge-blue'}">${t(statusKey)}</span>
+          <span class="event-type-label">${t(typeKey)}</span>
+        </div>
+        <div class="event-name">${escapeHTML(name)}</div>
+        <div class="event-desc">${escapeHTML(desc)}</div>
+        <div class="event-meta">
+          <div class="event-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>${dateStr}</span></div>
+          ${timeHTML}
+          ${locationHTML}
+        </div>
+      </div>`;
+
+  if (ev.url) {
+    return `<a href="${escapeHTML(ev.url)}" target="_blank" rel="noopener" class="card event-card reveal${isPast ? ' event-card-past' : ''} event-card-link">${inner}</a>`;
+  }
+  return `<div class="card event-card reveal${isPast ? ' event-card-past' : ''}">${inner}</div>`;
+}

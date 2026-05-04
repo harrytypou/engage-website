@@ -1246,29 +1246,8 @@ a.event-card-link {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  border: 1.5px solid var(--border-solid);
-  border-radius: var(--radius);
-  border-top: 3px solid var(--accent);
 }
 a.event-card-link:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow-lg);
-}
-a.event-card-link .event-card-body {
-  position: relative;
-}
-a.event-card-link .event-card-body::after {
-  content: '↗';
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent);
-  opacity: 0.35;
-  transition: opacity var(--transition);
-}
-a.event-card-link:hover .event-card-body::after {
-  opacity: 1;
+  box-shadow: var(--shadow-lg);
 }
