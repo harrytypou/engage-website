@@ -42,7 +42,7 @@ const LANG = {
     sec_team_title:   'Meet the team',
     sec_team_more:    'Full team →',
     sec_events_label: 'What\'s happening',
-    sec_events_title: 'Upcoming events',
+    sec_events_title: 'Events',
     sec_events_more:  'All events →',
 
     /* News */
@@ -219,7 +219,7 @@ const LANG = {
     sec_team_title:   'Η ομάδα μας',
     sec_team_more:    'Όλη η ομάδα →',
     sec_events_label: 'Τι γίνεται',
-    sec_events_title: 'Επερχόμενες εκδηλώσεις',
+    sec_events_title: 'Εκδηλώσεις',
     sec_events_more:  'Όλες οι εκδηλώσεις →',
 
     /* News */
